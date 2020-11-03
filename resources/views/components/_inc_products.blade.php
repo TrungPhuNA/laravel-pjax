@@ -11,6 +11,6 @@
         </div>
     @endforeach
     <div style="margin-top: 20px">
-        {!! $products->appends($query)->links() !!}
+        {!! $products->appends($query ?? [])->links() !!}
     </div>
 </div>
