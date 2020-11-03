@@ -11900,9 +11900,17 @@ __webpack_require__.r(__webpack_exports__);
 var InitProject = {
   init: function init() {
     this.runPjax();
+    this.submitGetForm();
   },
   runPjax: function runPjax() {
     $(document).pjax('a', '#pjax-container');
+  },
+  submitGetForm: function submitGetForm() {
+    $(document).on('submit', 'form[name="pjax-container"]', function (event) {
+      console.log(event);
+      $.pjax.submit(event, '#pjax-container');
+      return false;
+    });
   }
 };
 $(function () {
